@@ -1,0 +1,22 @@
+button#menubutton {
+    width: 120px;
+    height: 50px;
+    background: #f39800;
+    color: #fff;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 4px;
+
+    /* ボタンが少し浮いている感じの影 */
+    box-shadow: 0 5px 0 #b06d00;
+    transition: all 0.1s ease-in-out;
+    box-sizing: border-box;
+}
+
+button#menubutton:active {
+    /* ボタンが沈んだとき */
+    transform: translateY(5px); /* 下に沈む */
+    box-shadow: 0 2px 0 #db9014; /* 影を薄く短く */
+}
