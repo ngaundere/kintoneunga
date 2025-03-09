@@ -33,6 +33,7 @@
 
 			// コメント
 			const pLine = Ycreate('p', 'comment-line', state.record.keisai.value);
+			console.log(pLine);
 
 			// フッター
 			const footer = Ycreate('section', 'fotter-line');
