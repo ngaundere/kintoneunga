@@ -1,6 +1,7 @@
 (function () {
 	"use strict";
 
+	let pLine;
 	fb.events.form.created = [
 		function (state) {
 
