@@ -31,7 +31,7 @@
 			icon.id = 'home';
 
 			// コメント
-			const pLine = Ycreate('p', 'comment-line', "gell");
+			const pLine = Ycreate('p', 'comment-line', state.record.keisai.value);
 
 			// フッター
 			const footer = Ycreate('section', 'fotter-line');
