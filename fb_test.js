@@ -60,7 +60,7 @@
 
 	fb.events.fields.keisai.changed = [
 		function (state) {
-			pLine.textcontent=state.record.keisai.value
+			pLine.textContent=state.record.keisai.value
 		}
 
 
