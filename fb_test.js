@@ -2,7 +2,7 @@
 	"use strict";
 
 	fb.events.form.created = [
-		function (satate) {
+		function (state) {
 
 			function Ycreate(tag, classL, textC) {
 				const el = document.createElement(tag);
