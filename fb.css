@@ -5,13 +5,13 @@
     width: 300px;
     height: 480px;
     background-color: #8cabd9;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
     box-shadow: 0px 4px 10px;
     margin: 0px;
     font-size: 12px;
     display: flex; /* Flexboxを使う */
     flex-direction: column; /* 縦並び */
-    justify-content: flex-end; /* ヘッダーを上、フッターを下に */
+    justify-content: flex-start; /* ヘッダーを上、フッターを下に */
     overflow-y: auto;
     overflow-x: hidden;
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -25,7 +25,7 @@
 
 .line-block.none .header-line,
 .line-block.none .massage-line {
-    display: none; /* ヘッダーとメッセージエリアを隠す */
+    display: hidden; /* ヘッダーとメッセージエリアを隠す */
 }
 
 .header-line{
