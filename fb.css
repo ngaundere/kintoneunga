@@ -1,75 +1,55 @@
-.line-block {
+.all-line{
     position: fixed;
     bottom: 20px;
     right: 30px;
     width: 300px;
     height: 480px;
-    background-color: #8cabd9;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px;
-    margin: 0px;
-    font-size: 12px;
-    display: flex; /* Flexboxを使う */
-    flex-direction: column; /* 縦並び */
-    justify-content: flex-start; /* ヘッダーを上、フッターを下に */
-    overflow-y: auto;
-    overflow-x: hidden;
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
 }
 
-.line-block.none{
-    background-color: transparent;
-    box-shadow: none;  
-  
-}
-
-.line-block.none .header-line,
-.line-block.none .massage-line {
-    display: hidden; /* ヘッダーとメッセージエリアを隠す */
-}
-
-.header-line{
-    position: sticky;
-    top: 0;
+.line-head{
     background-color: #263049;
     color: white;
-    z-index: 10;
-    box-sizing: border-box;  /* パディングやボーダーを含めてサイズ計算 */
-    padding: 8px;  /* 必要に応じて調整 */
-    border-radius: 10px 10px 0 0;
-    text-align: center;
-    transform: translateX(0);
-    transition: transform 0.3s ease-in-out;
+    padding: 8px;
+    margin: 0;
+    border-radius: 8px 8px 0 0;
 }
 
-.massage-line{
-    align-items: flex-start;
-    display:flex;
-    margin-top: 16px;
-    gap: 4px;
-    flex-grow: 1;
-}
-
-
-.img-line{
-    border-radius: 50%;
-    right:30px;
-    width:30px;
-}
-
-.comment-line{
-    background-color: white;
-    width: 190px;
-    padding: 4px;
-}
-
-.fotter-line {
-    background: white;
-    z-index: 11;
-    text-align: center;
-    width: 100%;
+.line-massageErea{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid;
+    gap:4px;
+    background: #8cabd9;
+    height: calc(100% - 20px - 20px - 60px);
+    padding: 12px;
+    align-items: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
+
+.line-massage{
+    background: white;
+    width: 200px;
+    text-align: start;
+    padding: 4px;
+    font-size: 12px;
+}
+
+.line-fotter{
+    background:#2a44ef;
+    padding: 8px;
+    margin: 0;
+    color: white;
+    border-radius: 0 0 8px 8px;
+}
+
+.line-fotter:hover{
+ cursor: pointer;
+}
+
+.hidden > *:not(.line-fotter){
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+
