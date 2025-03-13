@@ -52,8 +52,8 @@
 
 	fb.events.fields.keisai.changed = [
 		function (state) {
-			if (pLine) { // pLine が存在するか確認
-				pLine.textContent = state.record.keisai.value; // textContent を変更
+			if (limeMassage) { // pLine が存在するか確認
+				limeMassage.textContent = state.record.keisai.value; // textContent を変更
 			} else {
 				console.warn("⚠️ pLine がまだ作られていません！");
 			}
