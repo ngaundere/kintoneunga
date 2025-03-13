@@ -6,56 +6,47 @@
 		function (state) {
 
 			function Ycreate(tag, classL, textC) {
-				const el = document.createElement(tag);
-				if (classL) el.classList.add(classL);
-				if (textC) el.textContent = textC;
-				return el;
-			}
+        const el = document.createElement(tag);
+        if (classL) el.classList.add(classL);
+        if (textC) el.textContent = textC;
+        return el;
+    }
 
-			const body = document.querySelector('body')
+    const body = document.querySelector('body')
 
-			// line-block セクション
-			const section = Ycreate('section', 'line-block');
+    // l セクション
+    const main = Ycreate('main', 'all-line');
 
-			// ヘッダー
-			const divHead = Ycreate('div', 'header-line', '播磨町');
+    // ヘッダー
+    const lineHead = Ycreate('div', 'line-head', '播磨町');
 
-			// メッセージエリア
-			const divImgP = Ycreate('div', 'massage-line');
+    // メッセージエリア
+    const section = Ycreate('section', 'line-massageErea');
 
-			// アイコン
-			const linkIcon = document.createElement('link');
-			linkIcon.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-			linkIcon.rel = 'stylesheet';
+    // アイコン
+    const linkIcon = document.createElement('link');
+    linkIcon.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+    linkIcon.rel = 'stylesheet';
 
-			const icon = Ycreate('i', 'material-icons', 'home');
-			icon.id = 'home';
+    const icon = Ycreate('i', 'material-icons', 'home');
+    icon.id = 'home';
 
-			// コメント
-			const pLine = Ycreate('p', 'comment-line', state.record.keisai.value);
-			console.log(pLine);
+    // コメント
+    const limeMassage = Ycreate('div', 'line-massage', "ここ１５文字だよ");
 
-			// フッター
-			const footer = Ycreate('section', 'fotter-line');
+    // フッター
+    const lineFotter = Ycreate('div', 'line-fotter', '閉じる');
 
-			const footerIcon = Ycreate('i', 'material-icons', 'home');
-			footerIcon.id = 'home';
+    lineFotter.addEventListener('click', () => {
+        main.classList.toggle('hidden');
+        lineFotter.textContent = main.classList.contains('hidden') ? '開く' : '閉じる'
+    });
 
-			const footerText = Ycreate('p', null, '閉じる');
-
-			footer.addEventListener('click', () => {
-				section.classList.toggle('none');
-				footerText.textContent = "開く"
-			});
-
-			// DOM構造を作成
-			body.appendChild(section);
-			section.append(divHead, divImgP, footer);
-			divImgP.append(linkIcon, icon, pLine);
-			footer.append(footerIcon, footerText);
-
-
-		}
+    // DOM構造を作成
+    body.appendChild(main);
+    main.append(lineHead, section, lineFotter);
+    section.append(linkIcon, icon, limeMassage);
+}
 
 	];
 
