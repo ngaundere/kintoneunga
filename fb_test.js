@@ -1,9 +1,9 @@
 (function () {
 	"use strict";
 
-	let pLine;
-	fb.events.form.created = [
-		function (state) {
+	let lineMassage;
+	fb.events.form.mounted = [
+	function (state) {
 
 			function Ycreate(tag, classL, textC) {
         const el = document.createElement(tag);
@@ -12,7 +12,7 @@
         return el;
     }
 
-    const body = document.querySelector('body')
+    const body = document.querySelector('body');
 
     // l セクション
     const main = Ycreate('main', 'all-line');
@@ -32,7 +32,7 @@
     icon.id = 'home';
 
     // コメント
-    const limeMassage = Ycreate('div', 'line-massage', "ここ１５文字だよ");
+    const lineMassage = Ycreate('div', 'line-massage', state.record.keisai.value);
 
     // フッター
     const lineFotter = Ycreate('div', 'line-fotter', '閉じる');
@@ -45,24 +45,21 @@
     // DOM構造を作成
     body.appendChild(main);
     main.append(lineHead, section, lineFotter);
-    section.append(linkIcon, icon, limeMassage);
-}
-
-	];
+    section.append(linkIcon, icon, lineMassage);
 
 	fb.events.fields.keisai.changed = [
 		function (state) {
-			if (limeMassage) { // pLine が存在するか確認
-				limeMassage.textContent = state.record.keisai.value; // textContent を変更
-			} else {
-				console.warn("⚠️ pLine がまだ作られていません！");
-			}
+				lineMassage.textContent = state.record.keisai.value; // textContent を変更
 		}
 	];
 
 
+
+}
+
+	];
+
+	
+
+
 })();
-
-
-
-
